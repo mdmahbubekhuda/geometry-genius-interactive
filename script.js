@@ -35,7 +35,7 @@ document.querySelector('#btn-triangle').addEventListener('click', function () {
     const calcValue = 0.5 * base * height
 
     // validation - NaN
-    if (isNaN(calcValue) || base <= 0 || height <= 0) return alert('Please provide number')
+    if (isNaN(calcValue) || base <= 0 || height <= 0) return alert('Please check your inputs, and try again...')
 
     // set result
     setInnerText('#result-triangle', calcValue)
