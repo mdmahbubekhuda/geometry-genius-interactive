@@ -104,17 +104,17 @@ document.querySelector('#btn-rhombus').addEventListener('click', function () {
 // pentagon
 document.querySelector('#btn-pentagon').addEventListener('click', function () {
     // get value
-    const d1 = getInputValue('#input-perimeter-pentagon')
-    const d2 = getInputValue('#input-apothem-pentagon')
+    const p = getInputValue('#input-perimeter-pentagon')
+    const a = getInputValue('#input-apothem-pentagon')
 
     // calculation
-    const calcValue = 0.5 * d1 * d2
+    const calcValue = 0.5 * p * a
 
     // set result
     setInnerText('#result-pentagon', calcValue)
 
     // validation - NaN
-    if (isNaN(calcValue) || d1 <= 0 || d2 <= 0) return alert('Please provide number')
+    if (isNaN(calcValue) || p <= 0 || a <= 0) return alert('Please provide number')
 
     // add element 
     addElement('#title-pentagon', calcValue)
