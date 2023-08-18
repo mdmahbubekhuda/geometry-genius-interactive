@@ -11,7 +11,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="w-11/12 mx-auto">
+  <body class="max-w-[1440px] w-11/12 mx-auto">
     <header class="flex justify-between my-8 bg-[#1090D81A] p-4 rounded-lg">
       <section>
         <h1 class="text-2xl">Interactive</h1>
@@ -22,9 +22,9 @@
 
     <main>
       <!-- geometry section -->
-      <section class="flex gap-8">
+      <section class="flex flex-col md:flex-row gap-8">
         <!-- shape container -->
-        <section class="grid grid-cols-3 gap-8">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- triangle  -->
           <section class="card card-compact w-full bg-base-100 shadow-xl">
             <figure class="flex-1">
@@ -33,15 +33,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-triangle" class="card-title">Triangle</h2>
               <p>Area (A) = 0.5 x b x h</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-base"
                   placeholder="base"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-height"
                   placeholder="height"
@@ -61,15 +61,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-rectangle" class="card-title">Rectangle</h2>
               <p>Area (A) = w x l</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-width"
                   placeholder="width"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-length"
                   placeholder="length"
@@ -89,15 +89,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-parallelogram" class="card-title">Parallelogram</h2>
               <p>Area (A) = b x h</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-base-parallelogram"
                   placeholder="base"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-height-parallelogram"
                   placeholder="height"
@@ -119,15 +119,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-rhombus" class="card-title">Rhombus</h2>
               <p>Area (A) = 0.5 x d1 x d2</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-diagonal1-rhombus"
                   placeholder="diagonal1"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-diagonal2-rhombus"
                   placeholder="diagonal2"
@@ -147,15 +147,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-pentagon" class="card-title">Pentagon</h2>
               <p>Area (A) = 0.5 x p x a</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-perimeter-pentagon"
                   placeholder="perimeter"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-apothem-pentagon"
                   placeholder="apothem"
@@ -177,15 +177,15 @@
             <div class="card-body items-center text-center flex-1">
               <h2 id="title-ellipse" class="card-title">Ellipse</h2>
               <p>Area (A) = πab</p>
-              <div>
+              <div class="space-y-2">
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-major-ellipse"
                   placeholder="a axis"
                 />cm
                 <input
-                  class="w-2/6 p-1 border-2 rounded mx-2"
+                  class="w-3/5 p-1 border-2 rounded mx-2"
                   type="number"
                   id="input-minor-ellipse"
                   placeholder="b axis"
@@ -201,8 +201,8 @@
           </section>
         </section>
         <!-- area calculation -->
-        <section id="area-calculation" class="w-1/3 space-y-4">
-          <h1 class="text-2xl font-bold">Area Calculation</h1>
+        <section id="area-calculation" class="w-1/3 space-y-4 p-2">
+          <h1 class="text-2xl font-bold text-center">Area Calculation</h1>
         </section>
       </section>
     </main>

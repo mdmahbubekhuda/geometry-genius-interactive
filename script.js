@@ -19,8 +19,8 @@ function addElement(titleId, areaValue) {
     const paragraphElement = document.createElement('p')
     paragraphElement.classList.add('text-lg', 'text-fuchsia-600')
     const elementCount = getParent.childElementCount
-    paragraphElement.innerHTML = `${elementCount} ${getTitle}: ${areaValue.toFixed(2)} cm<sup>2</sup> 
-    <button class="btn btn-neutral btn-xs">Convert</button>`
+    paragraphElement.innerHTML = `${elementCount}. ${getTitle}: ${areaValue.toFixed(2)} cm<sup>2</sup> 
+    <button class="btn btn-neutral btn-xs ml-4">Convert</button>`
 
     getParent.appendChild(paragraphElement)
 }
