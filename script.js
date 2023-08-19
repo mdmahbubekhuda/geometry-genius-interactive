@@ -5,7 +5,6 @@ function getInputValue(inputId) {
     selectInput.value = ''
     return numberValue
 }
-
 // set value function
 function setInnerText(elementId, calcValue) {
     const selectElement = document.querySelector(elementId)
@@ -13,17 +12,41 @@ function setInnerText(elementId, calcValue) {
 }
 // add element function
 function addElement(titleId, areaValue) {
+    // target element
     const getParent = document.getElementById('area-calculation')
     const getTitle = document.querySelector(titleId).innerText
 
-    const paragraphElement = document.createElement('p')
-    paragraphElement.classList.add('text-lg', 'text-fuchsia-600')
+    // created div and its child elements
     const elementCount = getParent.childElementCount
-    paragraphElement.innerHTML = `${elementCount}. ${getTitle}: ${areaValue.toFixed(2)} cm<sup>2</sup> 
-    <button class="btn btn-neutral btn-xs ml-4">Convert</button>`
+    const divElement = document.createElement('div')
 
-    getParent.appendChild(paragraphElement)
+    divElement.classList.add('text-lg', 'text-fuchsia-600')
+
+    divElement.innerHTML = `
+    <p> ${elementCount}. ${getTitle}-Area : ${areaValue.toFixed(2)} cm<sup>2</sup></p>
+    <p id = "display-meter"></p>
+    <button class= "btn-convert-meter btn btn-neutral btn-xs ml-4">Convert to Meter</button>`
+
+    // append to area calculation
+    getParent.appendChild(divElement)
 }
+// meter conversion function
+function convertSqrCentiMeter(button) {
+    const getSqrCm = button.parentNode.childNodes[1].innerText.split(' ')
+    const sqrCm = parseFloat(getSqrCm[3])
+    const sqrMeter = sqrCm / 10000
+    return sqrMeter
+}
+// meter conversion
+document.querySelector('#area-calculation').addEventListener('mouseover', function (event) {
+    const buttons = document.querySelectorAll('.btn-convert-meter')
+    for (const button of buttons) {
+        button.addEventListener('click', function (event) {
+            event.target.previousElementSibling.innerHTML = `Area: ${convertSqrCentiMeter(this)} m<sup>2</sup>`
+            event.stopImmediatePropagation()
+        })
+    }
+})
 
 // triangle
 document.querySelector('#btn-triangle').addEventListener('click', function () {
@@ -42,8 +65,8 @@ document.querySelector('#btn-triangle').addEventListener('click', function () {
 
     // add element - area calculation section
     addElement('#title-triangle', calcValue)
-})
 
+})
 // rectangle
 document.querySelector('#btn-rectangle').addEventListener('click', function () {
     // get value
@@ -62,7 +85,6 @@ document.querySelector('#btn-rectangle').addEventListener('click', function () {
     // add element 
     addElement('#title-rectangle', calcValue)
 })
-
 // parallelogram
 document.querySelector('#btn-parallelogram').addEventListener('click', function () {
     // get value
@@ -81,7 +103,6 @@ document.querySelector('#btn-parallelogram').addEventListener('click', function 
     // add element 
     addElement('#title-parallelogram', calcValue)
 })
-
 // rhombus
 document.querySelector('#btn-rhombus').addEventListener('click', function () {
     // get value
@@ -100,7 +121,6 @@ document.querySelector('#btn-rhombus').addEventListener('click', function () {
     // add element 
     addElement('#title-rhombus', calcValue)
 })
-
 // pentagon
 document.querySelector('#btn-pentagon').addEventListener('click', function () {
     // get value
@@ -119,7 +139,6 @@ document.querySelector('#btn-pentagon').addEventListener('click', function () {
     // add element 
     addElement('#title-pentagon', calcValue)
 })
-
 // ellipse
 document.querySelector('#btn-ellipse').addEventListener('click', function () {
     // get value
